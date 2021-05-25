@@ -20,7 +20,7 @@ Docker is a series of Layers. The first layer start off with the Host OS.
 Docker key Terminology
 - Image - it is the additional layer. (Base OS, necessary files, Our file). Each of this layer is called and image
 Image is ReadOnly
-- Container - If we want to run an image, we turn it to a container. We can create and destroy conatiners based on the image.
+- Container - If we want to run an image, we turn it to a container. We can create and destroy containers based on the image.
 - Dockerfile - SetupFile. This file tells what to do.
 Dockerfile is a script that tells you step by step what to do to create our image.
 
@@ -42,8 +42,9 @@ Dockerfile is a script that tells you step by step what to do to create our imag
 ```
 ## To Run an image we have to create a conatiner.
 ```
-- docker run -d --name container-name -p portnumberofmachine:portnumberofcontainer imagename:tag
+- docker run -e "environmentvariable" -d --name container-name -p portnumberofmachine:portnumberofcontainer imagename:tag
 ```
+// -e - environment variables (we can have multiple -e's)
 // -d - stands for disconnect
 // -p - map a port from container to our machine
 
@@ -52,3 +53,29 @@ After making more changes, we have to create a new image as a new version and re
 
 ### There are many docker images available at the officeil website
 [www.hub.docker.com](https://hub.docker.com/search?q=&type=image)
+
+
+## Microsoft SQL Server
+### Running MS SQL Server image :
+script to build mssqlserver 2017 docker container
+```
+    docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=password" --name container-name -p 11433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+```
+Check if connection is working in cmd
+```
+    sqlcmd -S <localhost,1432> -U SA -P 'Pwd12345!'
+```
+
+### To Build image using code in dockerfile
+```
+    docker  build -t container-name:version .
+```
+// This take the code inside dockerfile and executes it to build our own image
+// according to what is there in the file and copies it on to the top of docker OS
+
+### To Run the image and create a container
+```
+    docker run -p 11433:1433 -d restored-db --name sql-container
+```
+eg:-  `docker run --name mssql -p 1432:1433 -d restored-db`  -- This script Creates a container using restored-db image
+    
