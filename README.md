@@ -1,6 +1,6 @@
 # Docker-Into
 Intro to Docker
-# What is Docker compared to a VM?
+# What is Docker Compared to a VM?
 
 VM - Virtual Machine is a full installation of and OS. It is very large.
 Virtual Machine runs on something that has an OS and Applications, one of which is the Virtual Machine Host (which runs VM)
@@ -28,16 +28,17 @@ Dockerfile is a script that tells you step by step what to do to create our imag
 ## Basic Commands
 ### Image
 ```
-- docker images // show all images
-- docker build -t name:tag . // build a new image
-- docker image history imageid // to see the history of image 
+- docker build -t name:tag .        // build a new image
+- docker images                     // show all images
+- docker image history imageid      // to see the history of image 
+- docker rmi imageid                // to remove image
 ```
 ### Container
 ```
-- docker ps -a // show all containers
-- docker stop conatinerid // to stop a running container
-- docker start containerid // to start a container
-- docker rm containerid // removes the container
+- docker ps -a                      // show all containers
+- docker stop conatinerid           // to stop a running container
+- docker start containerid          // to start a container
+- docker rm containerid             // removes the container
 ```
 ## To Run an image we have to create a conatiner.
 ```
@@ -45,3 +46,9 @@ Dockerfile is a script that tells you step by step what to do to create our imag
 ```
 // -d - stands for disconnect
 // -p - map a port from container to our machine
+
+
+After making more changes, we have to create a new image as a new version and replace old one
+
+### There are many docker images available at the officeil website
+[www.hub.docker.com](https://hub.docker.com/search?q=&type=image)
