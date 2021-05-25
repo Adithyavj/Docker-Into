@@ -68,7 +68,7 @@ Check if connection is working in cmd
 
 ### To Build image using code in dockerfile
 ```
-    docker  build -t container-name:version .
+    docker build -t container-name:version .
 ```
 // This take the code inside dockerfile and executes it to build our own image
 // according to what is there in the file and copies it on to the top of docker OS
