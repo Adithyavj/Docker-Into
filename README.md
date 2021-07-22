@@ -2,7 +2,7 @@
 Intro to Docker
 # What is Docker Compared to a VM?
 
-VM - Virtual Machine is a full installation of and OS. It is very large.
+VM - Virtual Machine is a full installation of an OS. It is very large.
 Virtual Machine runs on something that has an OS and Applications, one of which is the Virtual Machine Host (which runs VM)
 it duplicates the OS.
 
