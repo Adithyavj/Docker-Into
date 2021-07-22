@@ -18,7 +18,7 @@ Docker is a series of Layers. The first layer start off with the Host OS.
 - The containers are reusable.
 
 Docker key Terminology
-- Image - it is the additional layer. (Base OS, necessary files, Our file). Each of this layer is called and image
+- Image - it is the additional layer. (Base OS, necessary files, Our file). Each of this layer is called an image.
 Image is ReadOnly
 - Container - If we want to run an image, we turn it to a container. We can create and destroy containers based on the image.
 - Dockerfile - SetupFile. This file tells what to do.
