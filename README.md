@@ -51,7 +51,7 @@ Dockerfile is a script that tells you step by step what to do to create our imag
 
 After making more changes, we have to create a new image as a new version and replace old one
 
-### There are many docker images available at the officeil website
+### There are many docker images available at the official website
 [www.hub.docker.com](https://hub.docker.com/search?q=&type=image)
 
 
